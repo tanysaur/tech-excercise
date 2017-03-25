@@ -23,4 +23,14 @@ router.post('/create', function(req, res) {
   });
 });
 
+
+//=========
+router.delete('/delete', function(req, res){
+  models.Person.destroy({
+    name: req.body.name
+  }).then(function(){
+    res.redirect('/');
+  });
+});
+
 module.exports = router;

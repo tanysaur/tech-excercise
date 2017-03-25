@@ -22,6 +22,9 @@
   {{#each people}}
     <li>
       {{this.name}}
+      <form action="people/{{this.id}}/tasks/delete" method="POST" style="display: inline">
+        <button type="submit">Delete person</button>
+      </form>
       <ul>
         {{#if ../logged_in}}
           <li>
@@ -35,6 +38,9 @@
         {{#each this.Tasks }}
           <li>
             {{this.task}}
+            <form action="people/{{this.id}}/tasks/delete" method="POST" style="display: inline">
+              <button type="submit">Delete task</button>
+            </form>
           </li>
         {{/each}}
       </ul>

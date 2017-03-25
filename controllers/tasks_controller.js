@@ -11,4 +11,14 @@ router.post('/:person_id/tasks/create', function (req, res) {
   });
 });
 
+///===
+router.delete('/:person_id/tasks/delete', function (req, res) {
+  models.Task.destroy({
+    task: req.body.task,
+    person_id: req.params.person_id
+  }).then(function() {
+    res.redirect('/');
+  });
+});
+
 module.exports = router;

@@ -3,7 +3,7 @@
     "dialect": "mysql",
     "host": "localhost",
     "username": "root",
-    "password": "",
+    "password": "rootpassword",
     "database": "projects_db"
   },
   "test": {
