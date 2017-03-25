@@ -22,7 +22,8 @@
   {{#each people}}
     <li>
       {{this.name}}
-      <form action="people/{{this.id}}/tasks/delete" method="POST" style="display: inline">
+      <form action="people/{{this.id}}/update_method=PUT" method="POST" style="display: inline">
+        <input input type="hidden" type="text" name="user" value={{this.id}}><br>
         <button type="submit">Delete person</button>
       </form>
       <ul>
@@ -38,10 +39,12 @@
         {{#each this.Tasks }}
           <li>
             {{this.task}}
-            <form action="people/{{this.id}}/tasks/delete" method="POST" style="display: inline">
+            <form action="people/{{this.id}}/tasks/update?_method=PUT" method="POST" style="display: inline">
+              <input input type="hidden" type="text" name="user" value={{this.id}}><br>
               <button type="submit">Delete task</button>
             </form>
           </li>
+
         {{/each}}
       </ul>
     </li>
